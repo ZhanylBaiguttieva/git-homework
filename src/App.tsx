@@ -1,29 +1,38 @@
-import Person from "./Person/Person";
+import Ball from "./Ball/Ball";
 import './App.css';
 import {useState} from "react";
 
 function App() {
-    const [people,setPeople] = useState([
-        {name: 'Jane', age: 28, hobby:'Video games'},
-        {name: 'John', age:30, hobby:'Knitting'},
+    const [balls, setBalls] = useState([
+        {number: 5},
+        {number: 11},
+        {number: 16},
+        {number: 23},
+        {number: 32},
     ]);
-    const changeName = () => {
-        setPeople([
-            {name: 'Jane Doe', age: 28, hobby:'Video games'},
-            {name: 'John Doe', age:30, hobby:'Knitting'},
+    const changeNumber = () => {
+        setBalls([
+            {number: 6},
+            {number: 12},
+            {number: 18},
+            {number: 25},
+            {number: 38},
         ]);
     };
 
-  return (
-      <div className="App">
-          <Person name={people[0].name} age={people[0].age}><strong>Hobby: </strong>{people[0].hobby}</Person>
-          <Person name={people[1].name} age={people[1].age}><strong>Hobby: </strong>{people[1].hobby}</Person>
-          <div>
-              <button onClick={changeName}>Change name</button>
-          </div>
-      </div>
+    return (
+        <div className="App">
+            <Ball number = {balls[0].number}></Ball>
+            <Ball number = {balls[1].number}></Ball>
+            <Ball number = {balls[2].number}></Ball>
+            <Ball number = {balls[3].number}></Ball>
+            <Ball number = {balls[4].number}></Ball>
 
-  )
+            <div>
+                <button onClick={changeNumber}> Change number</button>
+            </div>
+        </div>
+    )
 }
 
 export default App
